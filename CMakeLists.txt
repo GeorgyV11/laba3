@@ -5,4 +5,6 @@ set(CMAKE_C_STANDARD 11)
 
 add_executable(laba4 main.c
         stack.h
-        stack.c)
+        stack.c
+        workwithfile.c
+        workwithfile.h)

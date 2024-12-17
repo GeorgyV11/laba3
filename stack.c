@@ -6,19 +6,18 @@
 void add_element(Stack**p, Stack** top, int n){
     *p = (Stack*)malloc(sizeof(Stack));
     (*p)->data = n;
-    (*p)->link = NULL;
-    (*top)->link = *p;
+    (*p)->link = *top;
     *top = *p;
 }
 
-void print_Stack(Stack* beg, int length){
+void print_Stack(Stack* beg){
     Stack* tmp = beg;
-    for(int i = 0; i < length; ++i){
-        printf("%4d", tmp->data);
+    while(tmp != NULL){
+        printf("%d ", tmp->data);
         tmp = tmp->link;
     }
     printf("\n");
-} 
+}
 
 void delete_Stack(Stack** p, Stack** beg, int* length){
     for(int i = 0; i < *length; ++i){

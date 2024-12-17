@@ -7,7 +7,7 @@ typedef struct Stack{
 }Stack;
 
 void add_element(Stack **, Stack**, int);
-void print_Stack(Stack*, int);
+void print_Stack(Stack*);
 void delete_Stack(Stack**, Stack**, int* );
 int pop(Stack **stack);
 void insertionSortStack(Stack **stack);
