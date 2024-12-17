@@ -28,5 +28,6 @@ int main(int argc, char *argv[]) {
     append_stack_rows_to_file("../data.txt",stack);
     insertionSortStack(&stack);
     append_stack_rows_to_file("../data.txt",stack);
+    delete_Stack(&p,&stack);
     return 0;
 }

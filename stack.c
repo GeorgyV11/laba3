@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 #include "stack.h"
 
 void add_element(Stack**p, Stack** top, int n){
@@ -10,8 +9,8 @@ void add_element(Stack**p, Stack** top, int n){
     *top = *p;
 }
 
-void print_Stack(Stack* beg){
-    Stack* tmp = beg;
+void print_Stack(Stack* top){
+    Stack* tmp = top;
     while(tmp != NULL){
         printf("%d ", tmp->data);
         tmp = tmp->link;
@@ -19,13 +18,12 @@ void print_Stack(Stack* beg){
     printf("\n");
 }
 
-void delete_Stack(Stack** p, Stack** beg, int* length){
-    for(int i = 0; i < *length; ++i){
-        *p = *beg;
-        (*beg) = (*p)->link;
+void delete_Stack(Stack** p, Stack** top){
+    while(top != NULL){
+        *p = *top;
+        (*top) = (*p)->link;
         free((*p));
     }
-    *length = 0;
 }
 
 int pop(Stack **stack) {
